@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <center>
+        <div class="top">
+            <div class="mainflex">
+                <p class="title">Contact Management System</p>
+            </div>
+            <img class="cimg" src="./contact.png" alt="">
+        </div>
+    </center>
+    <div class="divider_div">
+        <div class="user_field">
+            <form onsubmit="event.preventDefault();user_data()" autocomplete="off">
+                <br>
+                <input class="input" id="username" type="text" placeholder="Name">
+                <br>
+                <br>
+                <input class="input" id="dob" type="date" placeholder="Date of Birth">
+                <br>
+                <br>
+                <select class="input" id="gender">
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <br>
+                <br>
+                <input class="input" id="number" type="number" placeholder="Contact Number">
+                <br>
+                <br>
+                <input class="input" id="address" type="text" placeholder="Address">
+                <br>
+                <br>
+                <input class="input" id="email" type="email" placeholder="Email">
+                <br>
+                <br>
+
+                <button type="submit" class="btn">Create Record</button>
+            </form>
+        </div>
+        <div class="data_set">
+            <input class="input" id="search" type="text" placeholder="Search...">
+            <table class="list theadm" id="contactlist">
+                <thead>
+                    <tr class="tr">
+                        <th><p class="thead">Name</p></th>
+                        <th><p class="thead">Date of Birth</p></th>
+                        <th><p class="thead">Gender</p></th>
+                        <th><p class="thead">Contact</p></th>
+                        <th><p class="thead">Address</p></th>
+                        <th><p class="thead">Email ID</p></th>
+                        <th><p class="thead">Options</p></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
