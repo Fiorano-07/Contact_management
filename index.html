@@ -7,9 +7,11 @@
     <title>Contact Management</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
 </head>
 <body>
-    <center>
+    <center> 
         <div class="top">
             <div class="mainflex">
                 <p class="title">Contact Management System</p>
@@ -65,6 +67,9 @@
                 <tbody>
                     
                 </tbody>
+                <!-- Add this button above the table in index.html -->
+<button onclick="exportToExcel()" class="btn">Export to Excel</button>
+
             </table>
         </div>
     </div>
