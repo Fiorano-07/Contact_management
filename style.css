@@ -157,3 +157,25 @@ select.input {
     box-shadow: 3px 3px 5px rgba(2, 2, 2, 0.733);
 }
 
+/* Style for the search bar */
+.search-bar {
+    width: 100%;
+    padding: 0.5rem;  /* Padding for better spacing */
+    margin-bottom: 1rem;  /* Space below the search bar */
+    border-radius: 5px;  /* Rounded corners */
+    border: 1px solid #ccc;  /* Light border */
+    background-color: white;  /* White background */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);  /* Slight shadow for depth */
+    font-size: 16px;  /* Font size */
+    color: white;  /* Text color */
+}
+
+.search-bar::placeholder {
+    color: #888;  /* Placeholder text color */
+}
+
+.search-bar:focus {
+    outline: none;
+    border: 2px solid #007bff;  /* Change border color on focus */
+    box-shadow: 2px 2px 8px rgba(0, 123, 255, 0.3);  /* Enhance shadow on focus */
+}
