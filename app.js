@@ -10,6 +10,7 @@ function user_data() {
         else
             updateRecord(formData);
         resetForm();
+        exportToExcel(); // Export data to Excel whenever a change is made
     }
 }
 
@@ -19,6 +20,7 @@ function onDelete(td) {
         row = td.parentElement.parentElement;
         document.getElementById("contactlist").deleteRow(row.rowIndex);
         resetForm();
+        exportToExcel(); // Export data to Excel whenever a deletion is made
     }
 }
 
@@ -122,3 +124,31 @@ document.getElementById("search").addEventListener("keyup", function() {
         row.style.display = isMatch ? "" : "none";
     });
 });
+
+/* ---- Export to Excel ---- */
+function exportToExcel() {
+    var wb = XLSX.utils.book_new();
+    var ws_data = [];
+    var table = document.getElementById("contactlist");
+    
+    // Add headers
+    var headers = [];
+    for (var i = 0; i < table.rows[0].cells.length; i++) {
+        headers.push(table.rows[0].cells[i].innerText);
+    }
+    ws_data.push(headers);
+
+    // Add rows
+    for (var i = 1; i < table.rows.length; i++) {
+        var rowData = [];
+        for (var j = 0; j < table.rows[i].cells.length - 1; j++) { // Exclude the last cell with options
+            rowData.push(table.rows[i].cells[j].innerText);
+        }
+        ws_data.push(rowData);
+    }
+
+    var ws = XLSX.utils.aoa_to_sheet(ws_data);
+    XLSX.utils.book_append_sheet(wb, ws, "Contacts");
+
+    XLSX.writeFile(wb, "contacts.xlsx");
+}
